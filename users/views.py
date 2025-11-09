@@ -51,6 +51,20 @@ class UserLoginView(LoginView):
         return context
 
 
+# class GoogleLoginView(LoginView):
+#     template_name = 'socialaccount/login.html'
+
+
+def GoogleLogin(request):
+    # context = super().get_context_data(**kwargs)
+
+    context = {
+        'title': 'Вход',
+    }
+
+    return render(request, 'socialaccount/login.html', context)
+
+
 class UserRegistrationView(CreateView):
     template_name = 'users/registration.html'
     form_class = UserRegistrationForm
